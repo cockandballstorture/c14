@@ -103,7 +103,7 @@ void shift(DLL* list, int n){
 	         if (ptr->next) {
                  ptr->next->prev = tmp;
                 }
-             ptr->next = tmp;*/
+             ptr->next = tmp;
         
 	 }
 	     else{
@@ -166,7 +166,7 @@ void shift1(DLL* list, int n){
     }
     else{
         for(i=0;i<abs(n);i++){
-        tmp=tmp->pred;
+        tmp=tmp->prev;
     }
     }
 }
