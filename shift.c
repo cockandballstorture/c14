@@ -96,7 +96,6 @@ void shift(DLL* list, int n){
 	         int i;
 	         for(i=0;i<n;i++){
 		         ptr = ptr->next;
-		         printf("%d\n",ptr->value);
 	             }
 	         tmp->prev=ptr;
 	         tmp->next=ptr->next;
