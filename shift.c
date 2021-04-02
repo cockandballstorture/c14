@@ -136,8 +136,19 @@ void printy(DLL *list) {
 
 }
 Node * shift1(DLL* list, int n){
-    Node *tmp = list->current;
-    int i;
+    Node *p = list->current;
+    Node *tmp = p;
+    Node *cur = p;
+    Node *mas = p;
+    int m[127];
+    int i=1;
+    m[0]=mas->value;
+    mas=mas->next;
+    while(mas!=cur){
+        m[i]=mas->value;
+        mas=mas->next;
+        i++;
+    }
     if(n>=0){
     for(i=0;i<n;i++){
         tmp=tmp->next;
@@ -148,7 +159,15 @@ Node * shift1(DLL* list, int n){
         tmp=tmp->prev;
     }
     }
-    return tmp;
+    i=1;
+    Node *q = tmp;
+    q->value=m[0];
+    q=q->next;
+    while(q!=tmp){
+        q->value=m[i];
+        q=q->next;
+        i++;
+    }
 }
 
 void main() {
@@ -160,7 +179,7 @@ void main() {
     push(List, 7);
     push(List, 5);
     print(List);
-    shift(List,2);
+    shift1(List,-2);
     print(List);
     DLL_delete(&List);
 }
