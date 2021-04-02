@@ -86,7 +86,7 @@ int pop(DLL* list) {
         return 0;
     }
 }
-void shift(DLL* list, int n){
+void idk(DLL* list, int n){
 	 Node *tmp=list->current;
 	 Node *ptr = tmp;
 	     if(n>=0){
@@ -135,7 +135,7 @@ void printy(DLL *list) {
     printf("%d\n",tmp->value);
 
 }
-Node * shift1(DLL* list, int n){
+Node * shift(DLL* list, int n){
     Node *p = list->current;
     Node *tmp = p;
     Node *cur = p;
@@ -149,8 +149,8 @@ Node * shift1(DLL* list, int n){
         mas=mas->next;
         i++;
     }
-    if(n>=0){
-    for(i=0;i<n;i++){
+    if(n<0){
+    for(i=0;i<abs(n);i++){
         tmp=tmp->next;
     }
     }
@@ -179,7 +179,7 @@ void main() {
     push(List, 7);
     push(List, 5);
     print(List);
-    shift1(List,-2);
+    shift(List,-2);
     print(List);
     DLL_delete(&List);
 }
